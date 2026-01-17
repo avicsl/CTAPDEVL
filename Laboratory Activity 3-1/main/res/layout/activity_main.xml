@@ -21,7 +21,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
-        <!-- NAME -->
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/tilName"
             android:layout_width="match_parent"
@@ -35,14 +34,13 @@
                 android:layout_height="wrap_content"/>
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!-- EMAIL -->
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/tilEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            app:helperText="Email must contain @"
-            app:boxBackgroundMode="outline">
+            app:boxBackgroundMode="outline"
+            app:helperText="Email must contain @">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etEmail"
@@ -52,25 +50,23 @@
                 android:layout_height="wrap_content"/>
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!-- BIO -->
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/tilBio"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            app:helperText="Max 140 characters"
-            app:boxBackgroundMode="outline">
+            app:boxBackgroundMode="outline"
+            app:helperText="Max 140 characters">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etBio"
                 android:hint="Short Bio"
-                android:maxLength="140"
                 android:minLines="3"
+                android:maxLength="140"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!-- BUTTON -->
         <Button
             android:id="@+id/btnPreview"
             android:layout_width="match_parent"
@@ -78,7 +74,8 @@
             android:layout_marginTop="28dp"
             android:text="Preview Profile"
             android:enabled="false"
-            android:backgroundTint="#EC407A"
+            android:clickable="false"
+            android:backgroundTint="#F8BBD0"
             android:textColor="@android:color/white"/>
 
     </LinearLayout>
