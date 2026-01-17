@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_background">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:padding="20dp">
+
+        <!-- Header Section -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            app:cardCornerRadius="24dp"
+            app:cardElevation="12dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/header_gradient"
+                android:padding="32dp">
+
+
+                <TextView
+                    android:text="Profile Preview"
+                    android:textSize="32sp"
+                    android:textStyle="bold"
+                    android:textColor="#FFFFFF"
+                    android:letterSpacing="0.08"
+                    android:gravity="center"
+                    android:shadowColor="#40000000"
+                    android:shadowDx="0"
+                    android:shadowDy="2"
+                    android:shadowRadius="8"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:text="Your profile card"
+                    android:textSize="14sp"
+                    android:textColor="#F0F0F0"
+                    android:letterSpacing="0.05"
+                    android:gravity="center"
+                    android:layout_marginTop="4dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- PROFILE CARD -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="24dp"
+            app:cardElevation="8dp"
+            app:cardBackgroundColor="@android:color/white">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center_horizontal"
+                android:padding="32dp">
+
+                <!-- AVATAR with background circle -->
+                <androidx.cardview.widget.CardView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    app:cardCornerRadius="50dp"
+                    app:cardElevation="6dp"
+                    app:cardBackgroundColor="#FCE4EC"
+                    android:layout_marginBottom="20dp">
+
+                    <ImageView
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_gravity="center"
+                        android:src="@android:drawable/sym_def_app_icon"
+                        android:contentDescription="Avatar"/>
+                </androidx.cardview.widget.CardView>
+
+                <!-- NAME -->
+                <TextView
+                    android:id="@+id/tvName"
+                    android:textSize="26sp"
+                    android:textStyle="bold"
+                    android:textColor="#EC407A"
+                    android:letterSpacing="0.02"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <!-- EMAIL -->
+                <TextView
+                    android:id="@+id/tvEmail"
+                    android:textSize="15sp"
+                    android:textColor="#757575"
+                    android:layout_marginTop="6dp"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <!-- DIVIDER -->
+                <View
+                    android:layout_width="80dp"
+                    android:layout_height="3dp"
+                    android:layout_marginVertical="20dp"
+                    android:background="#F8BBD0"/>
+
+                <!-- BIO LABEL -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center"
+                    android:layout_marginBottom="8dp">
+
+
+                    <TextView
+                        android:text="Bio"
+                        android:textStyle="bold"
+                        android:textColor="#EC407A"
+                        android:textSize="18sp"
+                        android:letterSpacing="0.05"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+
+                </LinearLayout>
+
+                <!-- BIO -->
+                <TextView
+                    android:id="@+id/tvBio"
+                    android:textSize="15sp"
+                    android:textColor="#424242"
+                    android:lineSpacingExtra="4dp"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- SHARE BUTTON -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnShare"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:layout_marginTop="24dp"
+            android:text="Share Profile"
+            android:textAllCaps="false"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            android:letterSpacing="0.1"
+            app:backgroundTint="#EC407A"
+            android:textColor="@android:color/white"
+            app:cornerRadius="16dp"
+            app:elevation="6dp"
+            app:icon="@android:drawable/ic_menu_share"
+            app:iconGravity="textStart"
+            app:iconTint="@android:color/white"/>
+
+        <!-- Bottom Spacing -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="24dp"/>
+
+    </LinearLayout>
+</ScrollView>
+
+    <!-- Create res/drawable/gradient_background.xml -->
+    <!--
+    <?xml version="1.0" encoding="utf-8"?>
+    <shape xmlns:android="http://schemas.android.com/apk/res/android">
+        <gradient
+            android:angle="135"
+            android:startColor="#FFF0F5"
+            android:centerColor="#FCE4EC"
+            android:endColor="#F8BBD0"
+            android:type="linear"/>
+    </shape>
+    -->
+
+    <!-- Create res/drawable/header_gradient.xml -->
+    <!--
+    <?xml version="1.0" encoding="utf-8"?>
+    <shape xmlns:android="http://schemas.android.com/apk/res/android">
+        <gradient
+            android:angle="45"
+            android:startColor="#EC407A"
+            android:centerColor="#E91E63"
+            android:endColor="#D81B60"
+            android:type="linear"/>
+    </shape>
+    -->
