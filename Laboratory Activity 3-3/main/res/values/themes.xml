@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Theme.LabAct3Item3" parent="Theme.Material3.Light.NoActionBar">
+        <item name="colorPrimary">#EC407A</item>
+        <item name="colorOnPrimary">#FFFFFF</item>
+        <item name="colorSecondary">#F48FB1</item>
+        <item name="android:statusBarColor">#EC407A</item>
+    </style>
+
+</resources>
