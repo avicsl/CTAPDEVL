@@ -1,6 +1,8 @@
 package com.example.labact3item1;
 
 import android.content.Intent;
+import android.content.res.ColorStateList;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -11,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.labact3item1.models.UserProfile;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -33,11 +36,18 @@ public class MainActivity extends AppCompatActivity {
         btnPreview = findViewById(R.id.btnPreview);
 
         TextWatcher watcher = new TextWatcher() {
-            @Override public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
-            @Override public void onTextChanged(CharSequence s, int start, int before, int count) {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
                 validateInputs();
             }
-            @Override public void afterTextChanged(Editable s) {}
+
+            @Override
+            public void afterTextChanged(Editable s) {
+            }
         };
 
         etName.addTextChangedListener(watcher);
@@ -62,29 +72,41 @@ public class MainActivity extends AppCompatActivity {
         String email = etEmail.getText().toString().trim();
         String bio = etBio.getText().toString().trim();
 
-        boolean valid = true;
+        boolean isValid = true;
 
+        // NAME validation (required)
         if (name.isEmpty()) {
-            tilName.setError("Name is required");
-            valid = false;
-        } else {
-            tilName.setError(null);
+            isValid = false;
         }
 
-        if (!email.contains("@")) {
+        // EMAIL validation (required + @)
+        if (email.isEmpty() || !email.contains("@")) {
             tilEmail.setError("Email must contain @");
-            valid = false;
+            isValid = false;
         } else {
             tilEmail.setError(null);
         }
 
-        if (bio.isEmpty() || bio.length() > 140) {
-            tilBio.setError("Bio must be 1–140 characters");
-            valid = false;
+        // BIO validation (required + max length)
+        if (bio.isEmpty()) {
+            tilBio.setError("Bio is required");
+            isValid = false;
+        } else if (bio.length() > 140) {
+            tilBio.setError("Bio must be 140 characters or less");
+            isValid = false;
         } else {
             tilBio.setError(null);
         }
 
-        btnPreview.setEnabled(valid);
+        // BUTTON STATE
+        btnPreview.setEnabled(isValid);
+        btnPreview.setClickable(isValid);
+
+        btnPreview.setBackgroundTintList(
+                ColorStateList.valueOf(
+                        Color.parseColor(isValid ? "#EC407A" : "#F8BBD0")
+                )
+        );
     }
+
 }
